@@ -1,5 +1,6 @@
 401 JS --  Lab 31 Budget Tracker
 ===
+David's Description
 
 ## Submission Instructions
   * Work in a fork of this repository
