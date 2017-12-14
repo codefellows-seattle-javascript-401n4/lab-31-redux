@@ -15,7 +15,7 @@ class CategoryForm extends React.Component{
 
   handleChange(e){
     let {value} = e.target;
-    this.setState({title: value});
+    this.setState({name: value});
   };
 
   handleSubmit(e){
