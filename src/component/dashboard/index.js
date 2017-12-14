@@ -19,6 +19,7 @@ class Dashboard extends React.Component{
         <div key={category.id}>
           <h2> {category.name} </h2>
           <button onClick={() => this.props.categoryRemove(category)}> X </button>
+          <CategoryForm category={category} onComplete={this.props.categoryUpdate} />
         </div>
       )}
     </div>
