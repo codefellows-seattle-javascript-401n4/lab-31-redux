@@ -1,6 +1,6 @@
+const emptyState = [];
 
-
-export default (state=[], {type, payload}) => {
+export default (state=emptyState, {type, payload}) => {
 
   switch ( type ) {
 
