@@ -1,6 +1,7 @@
 v401 JS --  Lab 31 Budget Tracker
 ===
-David's Description
+### David's Description
+Everything is complete. No styling. Haven't put in a way to update budget yet, but will re-design in lab 32 and 33.
 
 ## Submission Instructions
   * Work in a fork of this repository
