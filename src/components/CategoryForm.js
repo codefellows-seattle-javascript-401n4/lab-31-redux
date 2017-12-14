@@ -7,39 +7,41 @@ import newCategory from '../lib/newCategory';
 class CategoryForm extends React.Component {
     constructor(props) {
         super(props);
+        this.state = this.props.category || {};
     }
 
-    categoryName = '';
-    categoryBudget = 0;
 
-    createCategory = (event) => {
+    buttonClick = (event) => {
         event.preventDefault();
-        this.props.addCategory(newCategory(this.categoryName, this.categoryBudget));
+        this.props.handler(this.state);
     }
 
-    updateBudget = (event) => {
-        this.categoryBudget = event.target.value;
+    updateState = (event) => {
+        this.setState({[event.target.name]: event.target.value});
     }
 
-    setCategoryName = (event) => {
-        this.categoryName = event.target.value;
-    }
+
 
     render() {
         return (
             <form>
                 <div>
-                    Enter category name:
-                    <input onChange={this.setCategoryName}></input>
+                    Category Name
+                    {
+                        (this.props.buttonText === 'Create Category') ?
+                        <input name="categoryName" onChange={this.updateState}></input> :
+                        <input placeholder={this.props.placeholder} name="categoryUpdate" onChange={this.updateState}></input>
+                    }
                     <br />
                 </div>
                 <div>
                     Enter category Budget: 
-                    <input onChange={this.updateBudget}></input>
+                    <input name="categoryBudget" onChange={this.updateState}></input>
                     <br />
                 </div>
 
-                <button onClick={this.createCategory}>Create Category</button>
+                <button onClick={this.buttonClick}>{this.props.buttonText}</button>
+                {(this.props.buttonText === 'Update Category') ? <button onClick={this.props.cancel}>Cancel Update</button> : null}
             </form>
         )
     }

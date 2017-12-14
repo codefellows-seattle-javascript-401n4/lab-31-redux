@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDom from 'react-dom'
 
 import { Link, Route } from 'react-router-dom';
-import Category from './Category.js';
+import Dashboard from './Dashboard.js';
 
 class App extends React.Component {
     
@@ -16,7 +16,7 @@ class App extends React.Component {
                 <nav>
                 <Link to="/">Home</Link>
                 </nav>
-                <Route path="/" component={Category}/>
+                <Route path="/" component={Dashboard}/>
                 
             </div>
         )

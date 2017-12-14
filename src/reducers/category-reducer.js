@@ -4,10 +4,16 @@
         return [...state, action.category];
 
         case 'CATEGORY_UPDATE':
-        return [];
+        
+        return state.map(category => {
+           if (category.id === action.category.id) category.name = action.category.update;
+           return category;
+        });
         
         case 'CATEGORY_DESTROY':
-        return [];
+        return state.filter((category) => {
+          if (category.id !== action.id) return category;
+        });
 
         default:
             return state;
