@@ -7,7 +7,7 @@ import * as category from '../../action/category.js';
 class Dashboard extends React.Component{
   
   componentDidUpdate(){
-    console.log(this.props.state);
+    console.log(this.props.categories);
   };
  
   render(){
@@ -15,6 +15,12 @@ class Dashboard extends React.Component{
     <div className='dashboard'>
       <h1> goozgooz welcomes you </h1>
       <CategoryForm onComplete={this.props.categoryCreate}/>
+      {this.props.categories.map((category,i) => 
+        <div key={category.id}>
+          <h2> {category.name} </h2>
+          <button onClick={() => this.props.categoryRemove(category)}> X </button>
+        </div>
+      )}
     </div>
     )
   }
@@ -23,13 +29,16 @@ class Dashboard extends React.Component{
 
 let mapStateToProps = (state) => {
   return {
-    state: state,
+    categories: state || [],
   }
 }
 
 let mapDispatchToProps = (dispatch) => {
   return {
     categoryCreate: (data) => dispatch(category.create(data)),
+    categoryUpdate: (data) => dispatch(category.update(data)),
+    categoryRemove: (data) => dispatch(category.destroy(data)),
+
   }
 }
 

@@ -2,7 +2,6 @@ import React from 'react';
 
 let emptyState = {
   name: '',
-  budget: 0,
 }
 
 class CategoryForm extends React.Component{
@@ -14,7 +13,7 @@ class CategoryForm extends React.Component{
   }
 
   handleChange(e){
-    let {value} = e.target;
+    let {name, value} = e.target;
     this.setState({name: value});
   };
 
