@@ -1,4 +1,5 @@
   const categoryReducer = (state = [], action) => {
+
     switch(action.type) {
         case 'CATEGORY_CREATE':
         return [...state, action.category];
