@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack-dev-server --inline --hot",
+    "lint": "eslint --fix .",
     "build": "webpack"
   },
   "keywords": [],
@@ -33,6 +34,14 @@
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.5"
   },
+  "devDependencies": {
+  "eslint": "^4.13.0",
+  "eslint-config-airbnb": "^16.1.0",
+  "eslint-plugin-import": "^2.8.0",
+  "eslint-plugin-jsx-a11y": "^6.0.2",
+  "eslint-plugin-react": "^7.5.1",
+  "eslint-plugin-react-native": "^3.2.0"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DarDavis/lab-31-redux.git"
