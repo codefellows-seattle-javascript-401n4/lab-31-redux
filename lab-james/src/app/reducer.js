@@ -5,9 +5,9 @@ export default (state=initialState, action) => {
 
   switch(type){
 
-  case 'NOTE_ADD': return [...state, payload];
+  case 'CATEGORY_ADD': return [...state, payload];
 
   default: return state;
-  
+
   }
 };
