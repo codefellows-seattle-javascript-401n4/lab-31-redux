@@ -5,25 +5,34 @@ import {connect} from 'react-redux';
 import CategoryForm from './Category-form';
 import CategoryList from './Category-list';
 
-import {createCategory, updateCategory, deleteCategory} from '../appState/actions';
+import {createCategory, updateCategory, deleteCategory} from '../../appState/actions';
 
 class Categories extends React.Component {
 
   constructor(props) {
-    super(props);
+		super(props);
+		
+		this.props.handleAddCategory({name: 'To Do'});
+		this.props.handleAddCategory({name: 'In Progress'});
+		this.props.handleAddCategory({name: 'Code Review'});
+		
   }
 
   render() {
     return (
 			<div id="kanban">
 				<CategoryForm handler={this.props.handleAddCategory} />
-				<CategoryList handleDelete={this.props.handleDeleteCategory} handleUpdate={this.props.handleUpdateCategory} handleCategories={this.props.categories} />
+				<CategoryList 
+				 categories={this.props.categories}
+				 handleDelete={this.props.handleDeleteCategory}
+				 handleUpdate={this.props.handleUpdateCategory}
+				 handleCategories={this.props.categories} />
 			</div>
     )
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   categories: state
 });
 

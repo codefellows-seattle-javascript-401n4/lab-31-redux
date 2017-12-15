@@ -5,9 +5,7 @@ import {Route} from 'react-router-dom'
 
 import Header from './header'
 import Footer from './footer'
-import Navbar from './navbar'
-import Dashboard from './dashboard'
-// import Categories from './categories/category-container'
+import Categories from './categories/Category'
 
 class App extends React.Component {
 
@@ -19,10 +17,8 @@ class App extends React.Component {
     return (
       <div>
         <Header appTitle="Trellissimo" />
-        <Navbar />
         <main>
-          <Route exact path='/' component={Dashboard} />
-          <Route exact path='/categories' component={Categories} />
+          <Route exact path='/' component={Categories} />
         </main>
         <Footer>
           <p>Mookerjee Productions 2007</p>

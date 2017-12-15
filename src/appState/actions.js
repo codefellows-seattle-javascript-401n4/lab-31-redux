@@ -1,4 +1,4 @@
-import uuid from 'uuid/v2';
+import uuid from 'uuid/v1';
 
 export const createCategory = (category) => {
 
