@@ -11,6 +11,11 @@ class Main extends React.Component{
     constructor(props){
         super(props);
     }
+
+componentDidMount(){
+    store.subscribe(()=>console.log('STORE::::', store.getState()));
+}
+
  render(){
         return(
             <Provider store={store}>
