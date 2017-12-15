@@ -10,11 +10,11 @@ class CategoryItem extends React.Component{
         console.log("in item props::::",   this.props);
         return(
             <div className="category">
-
                 <header>
-                    <CategoryForm handler={this.handleUpd} category={this.props.category} />
+                    <CategoryForm handler={this.props.handleUpd} category={this.props.category} />
                     <a href="#" onClick={()=>this.props.handleDel(this.props.category)}>x</a>
                 </header>
+
 
             </div>
         )
