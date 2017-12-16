@@ -11,9 +11,14 @@ class CategoryItem extends React.Component{
         return(
             <div className="category">
                 <header>
-                    <CategoryForm handler={this.props.handleUpd} category={this.props.category} />
+                    <h3>{this.props.category.title}</h3>
                     <a href="#" onClick={()=>this.props.handleDel(this.props.category)}>x</a>
                 </header>
+                <CategoryForm handler={this.props.handleUpd} category={this.props.category} />    
+                <form>
+                    <input type = "text" placeholder="Type expense"></input>
+                    <input type = "number" placeholder="Type expense amount"></input>
+                </form>
 
 
             </div>

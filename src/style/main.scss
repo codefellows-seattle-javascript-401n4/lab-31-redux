@@ -3,7 +3,6 @@
 @import './footer';
 @import './categories';
 body{
-   
     div{
         width:90%;
         div{
@@ -27,7 +26,15 @@ body{
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
-                height:30em;
+                height:auto;
+                form{
+                    display: flex;
+                    flex-direction: column;
+                    align-items:center;
+                    input{
+                        margin:0.2em;
+                    }
+                }
             }
         }
     }    
