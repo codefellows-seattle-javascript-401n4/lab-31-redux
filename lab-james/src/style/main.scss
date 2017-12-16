@@ -1,5 +1,9 @@
 @import './components/header.scss',
         // './components/category-container.js',
-        './components/category-form.scss';
-        // './components/category-list.js',
+        './components/category-form.scss',
+        './components/category-list.scss';
         // './components/category-item.js'
+
+body {
+  background: #f3f3f3;
+}

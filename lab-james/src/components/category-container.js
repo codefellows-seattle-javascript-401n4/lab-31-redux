@@ -15,7 +15,10 @@ class CategoryContainer extends React.Component {
   render(){
     return(
       <div>
-        <CategoryForm handler={this.props.handleCreateCategory} id="mainCatForm"/>
+        <div id="mainCatForm">
+          <h3>New Budget</h3>
+          <CategoryForm handler={this.props.handleCreateCategory} />
+        </div>
         <CategoryList categories={this.props.categories} updateCat={this.props.handleUpdateCategory} deleteCategory={this.props.handleDeleteCategory}/>
       </div>
     )

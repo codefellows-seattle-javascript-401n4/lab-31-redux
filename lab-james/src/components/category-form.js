@@ -21,11 +21,14 @@ class CategoryForm extends React.Component {
   handleSubmit(e){
     e.preventDefault();
     this.props.handler(Object.assign({}, this.state));
+    if(this.props.category){
+      this.props.hideUpdate(this.props.category.id);
+    }
   }
 
   render(){
     return(
-      <form id={this.props.id} onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit}>
         <label htmlFor="name">Name:
           <input type="text" id="name" onChange={this.handleChange} />
         </label>
