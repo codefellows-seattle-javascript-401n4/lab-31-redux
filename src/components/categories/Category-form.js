@@ -18,6 +18,7 @@ class CategoryForm extends React.Component {
       e.preventDefault();
       console.log(this.props.handler, this.state);
       this.props.handler( Object.assign({}, this.state));
+      this.setState({name: '', budget: ''})      
     }
 
     handleChange(e) {
