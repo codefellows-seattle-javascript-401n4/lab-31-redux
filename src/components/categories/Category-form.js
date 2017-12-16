@@ -12,29 +12,31 @@ class CategoryForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
 
   }
+    
 
     handleSubmit(e) {
-        e.preventDefault();
-        console.log(this.props.handler, this.state);
-        this.props.handler( Object.assign({}, this.state) );
+      e.preventDefault();
+      console.log(this.props.handler, this.state);
+      this.props.handler( Object.assign({}, this.state));
     }
 
     handleChange(e) {
-        this.setState({[e.target.name]:e.target.value});
+      this.setState({[e.target.name]:e.target.value});
     }
 
     render() {
-
       return (
-        <form className="categoryForm" onSubmit={this.handleSubmit}>
+
+        <form className="categoryForm" onSubmit={this.handleSubmit} >
           <input
+            class='catInputs'
             type="text"
             name="name"
             value={this.state.name}
-            placeholder="Add new column"
+            placeholder="column name"
             onChange={this.handleChange}
             onBlur={this.handleSubmit}
-          />
+            />
         </form>
       )
     }

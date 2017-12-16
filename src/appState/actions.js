@@ -21,7 +21,7 @@ export const updateCategory = (category) => {
 
 export const deleteCategory = (categoryId) => {
   return {
-    type: "CATEGORY_DELETE",
+    type: "CATEGORY_DESTROY",
     payload: categoryId
   }
 }

@@ -12,15 +12,11 @@ class Categories extends React.Component {
   constructor(props) {
 		super(props);
 		
-		this.props.handleAddCategory({name: 'To Do'});
-		this.props.handleAddCategory({name: 'In Progress'});
-		this.props.handleAddCategory({name: 'Code Review'});
-		
   }
 
   render() {
     return (
-			<div id="kanban">
+			<div id="categoryWrapper">
 				<CategoryForm handler={this.props.handleAddCategory} />
 				<CategoryList 
 				 categories={this.props.categories}
