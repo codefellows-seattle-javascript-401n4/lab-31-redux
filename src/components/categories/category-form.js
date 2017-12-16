@@ -12,7 +12,7 @@ class CategoryForm extends React.Component{
     handleSubmit(e) {
         e.preventDefault();
         console.log(this.props.handler, this.state);
-        this.props.handler(this.state);//  Object.assign({}, 
+        this.props.handler(this.state);
     }
 
     handleChange(e) {
