@@ -5,7 +5,10 @@ import {BrowserRouter} from 'react-router-dom';
 
 import createStore from './app/store.js';
 
+import Header from './components/Header.js';
 import CategoryContainer from './components/category-container.js';
+
+import './style/main.scss';
 
 const store = createStore();
 
@@ -24,6 +27,7 @@ class Main extends React.Component {
       <Provider store={store}>
         <BrowserRouter>
           <div>
+            <Header />
             <CategoryContainer />
           </div>
         </BrowserRouter>

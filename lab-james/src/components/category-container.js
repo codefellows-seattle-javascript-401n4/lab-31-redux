@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import CategoryForm from './category-form.js';
 import CategoryList from './category-list.js';
 
-import {createCategory} from '../app/actions.js';
+import {createCategory, updateCategory, deleteCategory} from '../app/actions.js';
 
 class CategoryContainer extends React.Component {
 
@@ -15,8 +15,8 @@ class CategoryContainer extends React.Component {
   render(){
     return(
       <div>
-        <CategoryForm createCat={this.props.handleCreateCategory}/>
-        <CategoryList categories={this.props.categories}/>
+        <CategoryForm handler={this.props.handleCreateCategory} id="mainCatForm"/>
+        <CategoryList categories={this.props.categories} updateCat={this.props.handleUpdateCategory} deleteCategory={this.props.handleDeleteCategory}/>
       </div>
     )
   }
@@ -27,7 +27,9 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = (dispatch, getState) => ({
-  handleCreateCategory: category => dispatch(createCategory(category))
+  handleCreateCategory: category => dispatch(createCategory(category)),
+  handleUpdateCategory: category => dispatch(updateCategory(category)),
+  handleDeleteCategory: category => dispatch(deleteCategory(category))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CategoryContainer);

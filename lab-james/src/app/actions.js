@@ -16,3 +16,10 @@ export const updateCategory = category => {
     payload: category,
   };
 };
+
+export const deleteCategory = category => {
+  return {
+    type: 'CATEGORY_DELETE',
+    payload: category,
+  };
+};

@@ -5,7 +5,7 @@ class CategoryForm extends React.Component {
   constructor(props){
     super(props);
 
-    this.state = {
+    this.state = this.props.category || {
       name: '',
       budget: 0
     }
@@ -20,12 +20,12 @@ class CategoryForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.createCat(Object.assign({}, this.state));
+    this.props.handler(Object.assign({}, this.state));
   }
 
   render(){
     return(
-      <form onSubmit={this.handleSubmit}>
+      <form id={this.props.id} onSubmit={this.handleSubmit}>
         <label htmlFor="name">Name:
           <input type="text" id="name" onChange={this.handleChange} />
         </label>
