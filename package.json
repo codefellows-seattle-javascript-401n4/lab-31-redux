@@ -4,8 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --reporter spec testSetup.js \"src/components/**/*.test.js\"",
+    "test": "jest -i --verbose",
     "watch": "webpack-dev-server --inline --hot"
+  },
+  "jest": {
+    "setupFiles": [
+      "<rootDir>/src/test-setup/shim.js",
+      "<rootDir>/src/test-setup/setup.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(scss)$": "<rootDir>/node_modules/jest-css-modules"
+    }
   },
   "repository": {
     "type": "git",
@@ -44,6 +53,7 @@
     "webpack-dev-server": "^2.9.5"
   },
   "devDependencies": {
+    "babel-jest": "^21.2.0",
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.0",
     "eslint": "^4.12.1",
@@ -53,6 +63,8 @@
     "eslint-plugin-react": "^7.5.1",
     "eslint-plugin-react-native": "^3.2.0",
     "expect": "^21.2.1",
+    "jest": "^21.2.1",
+    "jest-css-modules": "^1.1.0",
     "mocha": "^4.0.1",
     "react-addons-test-utils": "^15.6.2",
     "sinon": "^4.1.3"

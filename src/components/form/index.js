@@ -27,9 +27,10 @@ class CategoryForm extends React.Component {
     } = this.props;
     const content = current ? current.content : '';
     return (
-      <form onSubmit={this.onSubmit}>
+      <form onSubmit={this.onSubmit} className="create-form">
         <label htmlFor="category">
           <input
+            type="text"
             id={inputId}
             onChange={this.onChange}
             value={content}

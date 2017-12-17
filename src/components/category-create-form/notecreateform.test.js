@@ -1,38 +1,31 @@
 import React from 'react';
-import expect from 'expect';
-import { shallow, configure } from 'enzyme';
+import { shallow, configure, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import sinon from 'sinon';
-import NoteCreateForm from './index';
-
-// notes on using snapshot tests
-
-/* component = renderer.create(<NoteCreateForm />)
-let tree = component.toJSON()
-expect(tree).toMatchSnapshot()
-regenerates snapshots npm test -- -u
-snapshot is sorta like a mock for backend
-*/
+import CategoryCreateForm from './';
+import CategoryForm from '../form';
 
 configure({ adapter: new Adapter() });
 
-describe('<NoteCreateForm>', () => {
+describe('<CategoryCreateForm />', () => {
+  let addCategory;
+  beforeEach(() => {
+    addCategory = sinon.spy();
+  });
   describe('onSubmit', () => {
-    it('calls add note when the form is submitted', () => {
-      const addNote = sinon.spy();
-      const wrapper = shallow(<NoteCreateForm addNote={addNote} />);
-      wrapper.find('form').simulate('submit', { preventDefault: () => {} });
-      expect(addNote.calledOnce).toEqual(true);
+    test('calls add category when the form is submitted', () => {
+      const wrapper = shallow(<CategoryCreateForm addCategory={addCategory} />);
+      wrapper.find(CategoryForm).simulate('submit', { preventDefault: () => {} });
+      expect(addCategory.calledOnce).toEqual(true);
     });
   });
 
   describe('onChange', () => {
-    it('calls add note when the form is submitted', () => {
-      const addNote = sinon.spy();
-      const wrapper = shallow(<NoteCreateForm addNote={addNote} />);
+    test('updates the state when input is updated', () => {
       const targetId = 'id';
       const targetValue = 'content';
-      wrapper.find('textarea').simulate('change', {
+      const wrapper = mount(<CategoryCreateForm addCategory={addCategory} />);
+      wrapper.find('#content').simulate('change', {
         target: {
           id: targetId,
           value: targetValue,
