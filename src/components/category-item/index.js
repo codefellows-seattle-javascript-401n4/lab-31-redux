@@ -13,7 +13,7 @@ class CategoryItem extends React.Component {
   }
 
   onClick(e) {
-    this.props.deleteCategory(e.target.dataset.categoryid);
+    this.props.deleteCategory({ id: e.target.dataset.categoryid });
   }
 
   startEditing(e) {
