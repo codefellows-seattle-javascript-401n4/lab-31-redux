@@ -1,9 +1,14 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import {Provider} from 'react-redux';
-import NoteForm from './components/note-form.js';
+import {BrowserRouter} from 'react-router-dom';
 
 import createStore from './app/store.js';
+
+import Header from './components/Header.js';
+import CategoryContainer from './components/category-container.js';
+
+import './style/main.scss';
 
 const store = createStore();
 
@@ -13,12 +18,19 @@ class Main extends React.Component {
     super(props);
   }
 
+  componentDidMount(){
+    store.subscribe( () => console.log('__STORE__', store.getState()));
+  }
+
   render(){
     return(
       <Provider store={store}>
-        <div>
-          <NoteForm />
-        </div>
+        <BrowserRouter>
+          <div>
+            <Header />
+            <CategoryContainer />
+          </div>
+        </BrowserRouter>
       </Provider>
     )
   }
