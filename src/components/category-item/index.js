@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { CategoryType } from '../../app/types';
 import CategoryEditForm from '../category-edit-form';
 
 class CategoryItem extends React.Component {
@@ -17,14 +18,11 @@ class CategoryItem extends React.Component {
 
   startEditing(e) {
     e.stopPropagation();
-    console.log(e.target);
-
     this.props.updateCategory({ id: e.target.dataset.categoryid, editing: true });
   }
 
   renderEditingForm(category) {
-    console.log('renderEditingForm', category);
-    if (category.editing === true) {
+    if (category.editing) {
       return (
         <CategoryEditForm category={category} updateCategory={this.props.updateCategory} />
       );
@@ -59,7 +57,7 @@ class CategoryItem extends React.Component {
 CategoryItem.propTypes = {
   deleteCategory: PropTypes.func.isRequired,
   updateCategory: PropTypes.func.isRequired,
-  // category: PropTypes.instanceOf(Category).isRequired,
+  category: PropTypes.shape(CategoryType).isRequired,
 };
 
 export default CategoryItem;

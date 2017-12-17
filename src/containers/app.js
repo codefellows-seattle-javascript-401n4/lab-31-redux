@@ -6,11 +6,12 @@ import Footer from '../components/footer';
 import Navbar from '../components/nav-bar';
 import Home from '../components/home';
 import Categories from '../containers/categories';
+import '../styles/main.scss';
 
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <div className="wrapper">
         <Header />
         <Navbar />
 

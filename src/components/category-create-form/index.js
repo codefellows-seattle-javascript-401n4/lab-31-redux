@@ -18,7 +18,7 @@ class CategoryCreateForm extends React.Component {
   }
 
   onSubmit() {
-    this.props.addCategory(this.state, 'categories');
+    this.props.addCategory(Object.assign({}, this.state));
   }
 
   setFormState(newState) {
@@ -27,11 +27,14 @@ class CategoryCreateForm extends React.Component {
 
   render() {
     return (
-      <BaseForm
-        onSubmit={this.onSubmit}
-        setFormState={this.setFormState}
-        inputs={this.inputs}
-      />
+      <div className="sidebar">
+        <BaseForm
+          current={this.state}
+          onSubmit={this.onSubmit}
+          setFormState={this.setFormState}
+          inputs={this.inputs}
+        />
+      </div>
     );
   }
 }

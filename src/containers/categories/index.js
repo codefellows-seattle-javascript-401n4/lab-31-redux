@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
+import { CategoryType } from '../../app/types';
 import CategoryForm from '../../components/category-create-form';
 import CategoryList from '../../components/category-list';
 
@@ -17,7 +18,7 @@ class Categories extends React.Component {
       categories,
     } = this.props;
     return (
-      <div id="board">
+      <div className="main">
         <CategoryForm addCategory={addCategory} />
         <CategoryList
           deleteCategory={deleteCategory}
@@ -40,7 +41,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 Categories.propTypes = {
-  // categories: PropTypes.arrayOf(PropTypes.object).isRequired,
+  categories: PropTypes.arrayOf(PropTypes.shape(CategoryType)).isRequired,
   addCategory: PropTypes.func.isRequired,
   updateCategory: PropTypes.func.isRequired,
   deleteCategory: PropTypes.func.isRequired,

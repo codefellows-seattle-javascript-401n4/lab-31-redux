@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-
 class CategoryForm extends React.Component {
   constructor(props) {
     super(props);
@@ -24,16 +23,16 @@ class CategoryForm extends React.Component {
     const {
       inputs,
       inputId,
-      category,
+      current,
     } = this.props;
-
+    const content = current ? current.content : '';
     return (
       <form onSubmit={this.onSubmit}>
         <label htmlFor="category">
           <input
             id={inputId}
             onChange={this.onChange}
-            defaultValue={category.content}
+            value={content}
           />
         </label>
         <div>
@@ -48,14 +47,16 @@ class CategoryForm extends React.Component {
 CategoryForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   setFormState: PropTypes.func.isRequired,
-  // inputs: PropTypes.arrayOf(PropTypes.object).isRequired,
-  // inputId: PropTypes.string,
-  // category: PropTypes.PropTypes.instanceOf(Category),
+  inputs: PropTypes.arrayOf(PropTypes.object).isRequired,
+  inputId: PropTypes.string,
+  current: PropTypes.shape({
+    content: PropTypes.string,
+  }),
 };
 
 CategoryForm.defaultProps = {
   inputId: 'content',
-  category: { content: '' },
+  current: { content: '' },
 };
 
 export default CategoryForm;

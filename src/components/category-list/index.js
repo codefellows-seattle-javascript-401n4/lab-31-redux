@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import CategoryItem from '../category-item';
+import { CategoryType } from '../../app/types';
 
 class CategoryList extends React.Component {
   render() {
@@ -10,24 +11,23 @@ class CategoryList extends React.Component {
       updateCategory,
       deleteCategory,
     } = this.props;
-
-    const listItems = categories.map(ele =>
+    const listItems = categories.map(category =>
       (
         <CategoryItem
-          key={ele.id}
-          note={ele}
+          key={category.id}
+          category={category}
           updateCategory={updateCategory}
           deleteCategory={deleteCategory}
         />
       ));
     return (
-      <ul>{listItems}</ul>
+      <ul className="results">{listItems}</ul>
     );
   }
 }
 
 CategoryList.propTypes = {
-  categories: PropTypes.arrayOf(PropTypes.object),
+  categories: PropTypes.arrayOf(PropTypes.shape(CategoryType)).isRequired,
   updateCategory: PropTypes.func.isRequired,
   deleteCategory: PropTypes.func.isRequired,
 };

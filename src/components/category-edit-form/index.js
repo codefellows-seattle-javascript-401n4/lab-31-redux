@@ -2,6 +2,7 @@ import React from 'react';
 import { noop } from 'lodash';
 import PropTypes from 'prop-types';
 
+import { CategoryType } from '../../app/types';
 import CategoryForm from '../form';
 
 class CategoryEditForm extends React.Component {
@@ -31,8 +32,8 @@ class CategoryEditForm extends React.Component {
       category,
       updateCategory,
     } = this.props;
-    const updatedCategory = Object.assign(this.state, { editing: false });
-    updateCategory(category.id, updatedCategory);
+    const updatedCategory = Object.assign(this.state, { id: category.id, editing: false });
+    updateCategory(updatedCategory);
   }
 
   setFormState(newState) {
@@ -40,13 +41,12 @@ class CategoryEditForm extends React.Component {
   }
 
   cancel() {
-    console.log(this.props);
     const {
       category,
       updateCategory,
     } = this.props;
-    const updatedCategory = Object.assign(category, { editing: false });
-    updateCategory(category.id, updatedCategory);
+    const updatedCategory = Object.assign(this.state, { id: category.id, editing: false });
+    updateCategory(updatedCategory);
   }
   render() {
     const {
@@ -58,13 +58,14 @@ class CategoryEditForm extends React.Component {
         setFormState={this.setFormState}
         inputs={this.inputs}
         category={category}
+        current={category}
       />
     );
   }
 }
 
 CategoryEditForm.propTypes = {
-  // category: PropTypes.instanceOf(Category).isRequired,
+  category: PropTypes.shape(CategoryType).isRequired,
   updateCategory: PropTypes.func.isRequired,
 };
 
