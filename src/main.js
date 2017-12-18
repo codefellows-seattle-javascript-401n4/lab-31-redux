@@ -1,8 +1,7 @@
-import './style/app.scss';
-
 import React from 'react';
 import ReactDom from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
+
 
 import Header from './components/header';
 import Footer from './components/footer';
@@ -44,7 +43,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Header appTitle="React App" />
+        <Header appTitle="ReDuX!" />
 
         <Navbar />
 
@@ -52,10 +51,9 @@ class App extends React.Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/expenses" component={() => <Expenses handler={this.updateTheBudget} app={this.app()} />} />
         </main>
-                    h
 
         <Footer>
-          <p>&copy;2017 Me</p>
+          <p>&copy;2017 Darryl D</p>
         </Footer>
       </div>
     );

@@ -9,7 +9,7 @@ const ExtractPlugin = require('extract-text-webpack-plugin');
 module.exports = {
 
   // Load this and everythning it cares about
-  entry: `${__dirname}/src/main.js`,
+  entry: './src/main.js',
 
   devServer: {
     historyApiFallback: true,
