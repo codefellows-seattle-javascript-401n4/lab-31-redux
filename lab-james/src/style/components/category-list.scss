@@ -1,0 +1,17 @@
+#catLists {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: start;
+
+  .category {
+    border: 1px solid black;
+    background: white;
+    padding: 1em;
+    margin-top: 1em;
+    margin-right: 1em;
+    width: 18%;
+    height: 100%;
+  }
+}
