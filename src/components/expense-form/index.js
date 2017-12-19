@@ -8,6 +8,7 @@ class ExpenseForm extends React.Component {
       id: uuid(),
       name: '',
       amount: 0,
+      type: null,
     };
 
     this.handleChange = this.handleChange.bind(this);
