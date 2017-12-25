@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
 
 import Header from './components/header';
@@ -9,6 +10,9 @@ import Modal from './components/modal';
 import Navbar from './components/navbar';
 import Home from './components/home';
 import Expenses from './components/expenses';
+import Categories from './components/categories/category-container';
+
+import store from './app/store';
 
 class App extends React.Component {
   constructor(props) {
@@ -42,6 +46,7 @@ class App extends React.Component {
 
   render() {
     return (
+      <Provider>
       <div>
         <Header appTitle="ReDuX!" />
 
@@ -50,6 +55,7 @@ class App extends React.Component {
         <main>
           <Route exact path="/" component={Home} />
           <Route exact path="/expenses" component={() => <Expenses handler={this.updateTheBudget} app={this.app()} />} />
+          <Route exact path="/categories" component={Categories} />
         </main>
 
         <Footer>

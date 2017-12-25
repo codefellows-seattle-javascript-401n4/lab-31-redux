@@ -13,6 +13,9 @@ class Navbar extends React.Component {
           <li>
             <Link to="/expenses">Expenses</Link>
           </li>
+          <li>
+            <Link to="/categories">Categories</Link>
+          </li>
         </ul>
 
 

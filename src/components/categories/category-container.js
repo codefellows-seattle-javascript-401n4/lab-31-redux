@@ -1,13 +1,12 @@
 import React from 'react';
 
-class Categories  extends React.Component {
-
+class Categories extends React.Component {
   render() {
-    return {
+    return (
       <div>
         Categories!
       </div>
-    }
+    );
   }
 }
 export default Categories;
