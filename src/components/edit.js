@@ -28,7 +28,7 @@ class Edit extends React.Component {
 
   handleSubmit(event){
     event.preventDefault();
-    this.props.handlerUp(Object.assign({}, this.props.category));
+    this.props.handlerUp(Object.assign({}, this.state));
   }
 
   render(){

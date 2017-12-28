@@ -22,6 +22,6 @@ export const catUpdate = (category) => {
 export const catDelete = (category) => {
   return {
     type: 'CATEGORY_DELETE',
-    payload: categoryID,
+    payload: category,
   };
 };
