@@ -10,6 +10,18 @@ export default (state=initialState, action) => {
       return [...state, payload];
     case "CATEGORY_DELETE":
       return state.filter( (item,i) => item.id !== payload );
+    case "CATEGORY_TOGGLE":
+      return state.map( (item,i) => {
+        if (item.id === payload) {
+          state[i].updating = !state[i].updating;
+        } return item;
+      });
+    case "CATEGORY_UPDATE":
+      return state.map( (item, i) => {
+        if (item.id === payload.id) {
+          state[i].name = payload.name;
+        } return item;
+      });
     default:
       return state;
   }
