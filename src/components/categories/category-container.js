@@ -14,17 +14,6 @@ class Categories extends React.Component {
     super(props);
   }
 
-  // componentDidUpdate() {
-  //   console.log('UpdatedProps', this.props);
-  //   this.setState({id: this.props.categories[0].id});
-  // }
-  // createExample = () => {
-  //   this.props.createCategory({name:'David'});
-  // }
-  // deleteExample = () => {
-  //   this.props.deleteCategory(this.state.id);
-  // }
-
   categoryRender = () => {
     return this.props.categories.map( (category,i) => {
       return (category.updating) ?
