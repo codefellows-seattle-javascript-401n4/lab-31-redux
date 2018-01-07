@@ -1,6 +1,6 @@
 'use strict';
 
-const initialState = [];
+export const initialState = [];
 
 export default (state=initialState,action) => {
   let {type,payload} = action;
@@ -10,6 +10,7 @@ export default (state=initialState,action) => {
     return [...state,payload];
 
   case 'CATEGORY_UPDATE':
+  console.log('UPDATE STATE', state);
     return state.map( (item,i) => item.id === payload.id ? payload : item);
 
   case 'CATEGORY_DELETE':
