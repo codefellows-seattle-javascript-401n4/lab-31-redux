@@ -12,12 +12,21 @@ import {catCreate,catUpdate,catDelete} from '../actions/actionCreate.js';
 class Categories extends React.Component {
   constructor(props){
     super(props);
+
   }
+
+
   render(){
+    console.log(this.props);
     return(
       <div id='board'>
-        <CatForm handler={this.props.handleAddCategory}/>
-        <CatItem handleDelete={this.props.handleDeleteCategory} handlerUp={this.props.handleUpdateCategory} cats={this.props.categories}/>
+        <div className="siteHeader">
+        Online Bank Ledger
+        <div className="inputForm">
+        <CatForm handler={this.props.handleAddCategory} handUp={this.props.handleUpdateCategory}/>
+        </div>
+        </div>
+        <CatItem handler={this.props.handleAddCategory} handUp={this.props.handleUpdateCategory} handleDelete={this.props.handleDeleteCategory} cats={this.props.categories}/>
       </div>
     );
   }
