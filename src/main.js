@@ -1,5 +1,5 @@
 'use strict';
-import '../src/style/main.scss'
+import '../src/style/main.scss';
 import React from 'react';
 import ReactDom from 'react-dom';
 import {BrowserRouter} from 'react-router-dom';

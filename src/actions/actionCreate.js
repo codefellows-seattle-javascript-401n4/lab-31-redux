@@ -5,7 +5,6 @@ import uuid from 'uuid/v1';
 export const catCreate = (category) => {
   category.id = uuid();
   category.timeStamp = new Date().toLocaleString();
-
   return {
     type: 'CATEGORY_ADD',
     payload: category,

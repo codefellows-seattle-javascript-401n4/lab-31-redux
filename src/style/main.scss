@@ -1,7 +1,52 @@
 body {
-  background-color: green;
+  background-color: white;
 }
 
 ul {
   list-style: none;
+}
+
+li {
+  display: inline-block;
+  background-color: #00C9B0;
+  width: 180px;
+  margin: 40px;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.inputForm {
+  height: 50px;
+}
+
+.form {
+  float: right;
+  font-family: Tahoma;
+  background-color: #00C9B0;
+  border-radius: 5px;
+}
+
+.siteHeader {
+  background-color: black;
+  color: white;
+}
+
+.nameLi {
+  margin: 25px;
+}
+.itemHeader {
+  word-wrap: break-word;
+  font-size: 20px;
+  background-color:#89FFFF;
+}
+
+.editName {
+  font-size: 15px;
+}
+
+.editBudget {
+  font-size: 15px;
+}
+.editNameInput {
+  border-radius: 4px;
 }
