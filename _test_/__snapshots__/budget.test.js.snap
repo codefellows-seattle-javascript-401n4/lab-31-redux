@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`create a new budget with the name groceries and the budget amount to be  1`] = `
+<div>
+  <form
+    className="form"
+    onSubmit={[Function]}
+  >
+    Your budget name:
+    <input
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <br />
+    Your budget expense:
+    <input
+      onChange={[Function]}
+      type="text"
+      value={0}
+    />
+    <button
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`should fail with non unique ids 1`] = `
+<div>
+  <form
+    className="form"
+    onSubmit={[Function]}
+  >
+    Your budget name:
+    <input
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <br />
+    Your budget expense:
+    <input
+      onChange={[Function]}
+      type="text"
+      value={0}
+    />
+    <button
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`should pass with unique ids 1`] = `
+<div>
+  <form
+    className="form"
+    onSubmit={[Function]}
+  >
+    Your budget name:
+    <input
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <br />
+    Your budget expense:
+    <input
+      onChange={[Function]}
+      type="text"
+      value={0}
+    />
+    <button
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`test should fail because of change in budget content 1`] = `
+<div>
+  <form
+    className="form"
+    onSubmit={[Function]}
+  >
+    Your budget name:
+    <input
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <br />
+    Your budget expense:
+    <input
+      onChange={[Function]}
+      type="text"
+      value={0}
+    />
+    <button
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
