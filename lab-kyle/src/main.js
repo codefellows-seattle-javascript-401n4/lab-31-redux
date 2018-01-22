@@ -8,15 +8,19 @@ import {Provider} from 'react-redux';
 import App from './components/app';
 import createStore from './app/store';
 
+const store = createStore();
+
 class Main extends React.Component {
   constructor(props){
     super(props);
   }
   render(){
     return (
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </Provider>
     )
   }
 }

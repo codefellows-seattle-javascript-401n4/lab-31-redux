@@ -1,5 +1,3 @@
-import './_navbar.scss';
-
 import React from 'react';
 import {Link} from 'react-router-dom';
 
@@ -9,7 +7,7 @@ class Navbar extends React.Component {
       <nav className="navbar">
         <ul>
           <li><Link to="/" >Home</Link></li>
-          <li><Link to="/categories" >Categories</Link></li>
+          <li><Link to="/project">Project</Link></li>
         </ul>
       </nav>
     )

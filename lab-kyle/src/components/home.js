@@ -1,5 +1,3 @@
-import './_home.scss';
-
 import React from 'react';
 
 class Home extends React.Component {
