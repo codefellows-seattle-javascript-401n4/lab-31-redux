@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import CategoryForm from './category-form';
 import CategoryList from './category-list';
 
-import {categoryCreate, categoryUpdate, categryDelete} from '../../app/actions';
+import {categoryCreate, categoryUpdate, categoryDelete} from '../../app/actions';
 
 class Categories extends React.Component {
   constructor(props){
@@ -29,7 +29,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch, getState) => ({
   handleAddCategory: category => dispatch(categoryCreate(category)),
   handleUpdateCategory: category => dispatch(categoryUpdate(category)),
-  handleDeleteCategory: category => dispatch(categryDelete(category))
+  handleDeleteCategory: category => dispatch(categoryDelete(category))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Categories);

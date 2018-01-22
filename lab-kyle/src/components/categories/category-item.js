@@ -1,12 +1,18 @@
-import './_category-item.scss';
-
 import React from 'react';
 
+import CategoryForm from './category-form';
+
 class CategoryItem extends React.Component {
+  constructor(props){
+    super(props);
+  }
   render(){
     return (
-      <div>
-          Category Item
+      <div className="category">
+        <header>
+          <CategoryForm handler={this.props.handleUpdate} category={this.props.category} />
+          <a href="#" onClick={()=>this.props.handleDelete(this.props.category.id)}>X</a>
+        </header>
       </div>
     )
   }

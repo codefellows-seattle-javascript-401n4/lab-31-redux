@@ -25,7 +25,7 @@ class App extends React.Component {
         </main>
 
         <Footer>
-          <p>&copy; 2017</p>
+          <p>&copy; 2018</p>
         </Footer>
       </div>
     )
