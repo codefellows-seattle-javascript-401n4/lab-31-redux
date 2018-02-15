@@ -1,27 +1,23 @@
-import React from 'react'
-import {connect} from 'react-redux'
-import SectionForm from '../section-form'
-import * as section from '../../action/section.js'
+import React from 'react';
+import {connect} from 'react-redux';
+import CategoryForm from '../category-form';
+import CategoryItem from '../category-item';
+import * as category from '../../action/category.js';
 
 class Landing extends React.Component {
-  render(){
-    let {
-      sections,
-      sectionCreate,
-      sectionRemove,
-      sectionUpdate,
-    } = this.props
+  constructor(props) {
+    super(props);
+  }
 
+  render() {
     return (
       <div className='landing'>
-        <SectionForm onComplete={sectionCreate} />
-        {sections.map((section, i) => 
-          <div key={i}>
-            <h2> {section.title} </h2>
-            <button onClick={() => sectionRemove(section)}>
-              delete
-            </button>
-            <SectionForm section={section} onComplete={sectionUpdate} />
+        <CategoryForm onComplete={CategoryForm} />
+        {state.map((state) => 
+          <div>
+            <h2> {category.title} </h2>
+            <button onClick={() => categoryRemove(category)}> Delete </button>
+            <CategoryForm category={category} onComplete={scategoryUpdate} />
           </div>
         )}
       </div>
@@ -29,21 +25,4 @@ class Landing extends React.Component {
   }
 }
 
-// return objects that will become props for the compoent
-let mapStateToProps = (state) => {
-  return {
-    title: 'lulwat',
-    sections: state ,
-  }
-}
-
-let mapDispatchToProps = (dispatch) => {
-  return {
-    cool: 'sweet',
-    sectionCreate: (data) => dispatch(section.create(data)),
-    sectionUpdate: (data) => dispatch(section.update(data)),
-    sectionRemove: (data) => dispatch(section.remove(data)),
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Landing)
+export default connect()(Landing)
