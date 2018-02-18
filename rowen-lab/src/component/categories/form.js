@@ -26,7 +26,7 @@ class CategoryForm extends React.Component{
           type='text'
           name='title'
           value={this.state.title}
-          placeHolder='New Category'
+          placeholder='New Category'
           onChange={this.handleChange}
         />
       </form>
