@@ -37,7 +37,7 @@ class Apps extends React.Component {
 
     addNote(note) {
       this.setState({
-        notes: [this.state.notes.push(note)]
+        notes: [...this.state.notes, note]
       });
     }
 
