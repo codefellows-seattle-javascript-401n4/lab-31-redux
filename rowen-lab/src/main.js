@@ -50,7 +50,7 @@ class Apps extends React.Component {
   render() {
     return (
       <div>
-        <h1>'Notes: '</h1>
+        <h1>Notes: </h1>
         <Form addNote={this.addNote} />
 
         <List

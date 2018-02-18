@@ -31,7 +31,7 @@ renderNotes()  {
   render() {
     return (
       <div>
-        <h2>'Rendered Notes: '</h2>
+        <h2>Rendered Notes: </h2>
           <ul>{this.renderNotes()}</ul>
         </div>
     )
