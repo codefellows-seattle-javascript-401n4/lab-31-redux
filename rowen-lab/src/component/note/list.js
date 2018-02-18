@@ -14,7 +14,7 @@ renderNotes()  {
   return this.props.notes.map(note => {
     return (note.editing)
     ?
-    <NoteUpdateForm
+    <UpdateForm
     key={note.id}
     note={note}
     newContent={this.props.newContent}
