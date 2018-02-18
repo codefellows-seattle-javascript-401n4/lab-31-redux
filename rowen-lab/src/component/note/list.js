@@ -6,6 +6,7 @@ import UpdateForm from './update-form';
 class List extends React.Component {
   constructor(props) {
     super(props);
+    this.renderNotes = this.renderNotes.bind(this);
   }
 
 renderNotes()  {
