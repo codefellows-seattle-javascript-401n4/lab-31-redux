@@ -15,21 +15,27 @@ class Categories extends React.Component {
   render(){
     return (
       <div id="board">
-        <CategoryForm handler={this.props.handleAddCategory} />
-        <CategoryList handleDelete={this.props.handleDeleteCategory} handleUpdate={this.props.handleUpdateCategory} cats={this.props.categories} />
+        <CategoryForm onComplete={this.props.categoryCreate} />
+        {this.props.categories.map((category,i) =>
+          <div key={category.id}>
+            <h3>{category.name}</h3>
+            <button onClick={() => this.props.categoryDelete(category.id)}>X</button>
+            <CategoryForm category={category} onComplete={this.props.categoryUpdate} />
+          </div>
+        )}
       </div>
     )
   }
 }
 
 const mapStateToProps = state => ({
-  categories: state
+  categories: state || [],
 });
 
 const mapDispatchToProps = (dispatch, getState) => ({
-  handleAddCategory: category => dispatch(categoryCreate(category)),
-  handleUpdateCategory: category => dispatch(categoryUpdate(category)),
-  handleDeleteCategory: category => dispatch(categoryDelete(category))
+  categoryCreate: category => dispatch(categoryCreate(category)),
+  categoryUpdate: category => dispatch(categoryUpdate(category)),
+  categoryDelete: category => dispatch(categoryDelete(category))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Categories);
