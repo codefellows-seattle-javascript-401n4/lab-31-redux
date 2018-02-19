@@ -14,9 +14,9 @@ class Categories extends React.Component {
 
   render(){
     return(
-      <div id='board'>
-        <CategoryForm handler = {this.props.handleAddCategory}/>
-        <CategoryList handleDelete={this.props.handleDeleteCategory}/>
+      <div id="board">
+          <CategoryForm handler={this.props.handleAddCategory} />
+          <CategoryList handleDelete={this.props.handleDeleteCategory} handleUpdate={this.props.handleUpdateCategory} cats={this.props.categories} />
       </div>
     )
   }

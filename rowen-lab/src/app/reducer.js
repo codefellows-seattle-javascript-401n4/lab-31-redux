@@ -11,7 +11,7 @@ export default (state=initialState, action) => {
       return state.map((item, i) => item.id ===payload.id ? payload : item)
 
     case 'CATEGORY_DESTROY':
-      return state.filet((item, i) => item.id!==payload)
+      return state.filter((item, i) => item.id!==payload)
 
     default:
       return state;

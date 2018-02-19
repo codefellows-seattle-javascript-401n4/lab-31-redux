@@ -20,8 +20,8 @@ class App extends React.Component {
         <Navbar />
 
         <main>
-          <Route exact path='/' component={Categories}/>
-          // <Route exact path='/project' component={Categories}/>
+          <Route exact path='/' component={Home}/>
+          <Route exact path='/project' component={Categories}/>
         </main>
         <Footer>
           <p>&copy;2017 placeholder</p>

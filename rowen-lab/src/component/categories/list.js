@@ -7,12 +7,13 @@ class CategoryList extends React.Component {
         return (
             <div id="categories">
                 {
-                  this.props.category.map( (category, i) =>
+                  this.props.cats.map( (category, i) => {
                         <CategoryItem
                         handleDelete={this.props.handleDelete}
                         handleUpdate={this.props.handleUpdate}
                         key={category.id}
-                        category={category} />)
+                        category={category} />
+                  })
                 }
             </div>
         )
